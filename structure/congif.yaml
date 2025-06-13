@@ -1,0 +1,38 @@
+# GPT-CLI Configuration File
+
+# Choose which API to use by default
+# Must match one of the keys under "apis"
+default_api: openai
+
+# API configurations
+apis:
+  openai:
+    api_key: "your-openai-api-key-here"
+    model: "gpt-4o"
+    endpoint: "https://api.openai.com/v1/chat/completions"
+
+  anthropic:
+    api_key: "your-anthropic-api-key-here"
+    model: "claude-3-opus"
+    endpoint: "https://api.anthropic.com/v1/messages"
+
+  mistral:
+    api_key: "your-mistral-api-key-here"
+    model: "mistral-medium"
+    endpoint: "https://api.mistral.ai/v1/chat/completions"
+
+  void: # Custom API made by @acattoxddd on discord >_<, actually works really good.
+    api_key: "your-void-api-key-here"
+    model: "gpt-4o"
+    endpoint: "https://api.voidai.app/v1/chat/completions"
+
+# Optional preferences, you can change this ot comment out the ones that don't matter
+settings:
+  system_prompt: "You are a helpful assistant."
+  temperature: 0.7
+  max_tokens: 1000
+  top_p: 1.0
+  presence_penalty: 0.0
+  frequency_penalty: 0.0
+  enable_logging: false
+  history_limit: 10  # How many previous chats the AI will remember.
