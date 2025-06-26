@@ -2,6 +2,8 @@ from prompt_toolkit import PromptSession
 from gptcli.config import load_config
 from gptcli.apis import openai
 import random
+import datetime
+import time
 
 def main():
     config = load_config()
@@ -27,8 +29,8 @@ def main():
                 max_tokens=settings.get("max_tokens", 1000),
                 top_p=settings.get("top_p", 1.0)
             )
-            print(f"\nAI: {reply}\n")
-            history.append({"role": "assistant", "content": reply})
+            print(f"\nAI: {reply} at {datetime.datetime.now()}\n")
+            history.append({"role": "assistant", "content": reply, "timestamp": time.mktime(datetime.datetime.now().timetuple())})
 
         except KeyboardInterrupt:
             print("\nExiting...")
