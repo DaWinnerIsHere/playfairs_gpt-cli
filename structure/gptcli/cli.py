@@ -29,8 +29,9 @@ def main():
                 max_tokens=settings.get("max_tokens", 1000),
                 top_p=settings.get("top_p", 1.0)
             )
-            print(f"\nAI: {reply} at {datetime.datetime.now()}\n")
-            history.append({"role": "assistant", "content": reply, "timestamp": time.mktime(datetime.datetime.now().timetuple())})
+            timestamp = time.mktime(datetime.datetime.now().timetuple())
+            print(f"\nAI: {reply} ?at? {timestamp}\n")
+            history.append({"role": "assistant", "content": reply, "timestamp": timestamp})
 
         except KeyboardInterrupt:
             print("\nExiting...")
