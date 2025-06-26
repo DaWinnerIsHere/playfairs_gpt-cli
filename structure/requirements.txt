@@ -1,3 +1,4 @@
 httpx
 PyYAML
 prompt_toolkit
+win11toast
