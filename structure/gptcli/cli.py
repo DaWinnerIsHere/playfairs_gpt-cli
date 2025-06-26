@@ -1,6 +1,7 @@
 from prompt_toolkit import PromptSession
 from gptcli.config import load_config
 from gptcli.apis import openai
+import datetime
 
 def main():
     config = load_config()
@@ -11,7 +12,6 @@ def main():
     session = PromptSession()
     history = []
 
-    print("Welcome to gpt-cli! Type 'exit' to quit.\n")
     while True:
         try:
             user_input = session.prompt("You: ")
@@ -22,7 +22,7 @@ def main():
             reply = openai.chat_openai(
                 api_key=api_conf["api_key"],
                 model=api_conf["model"],
-                messages=history[-settings.get("history_limit", 10):],
+                messages=history[-settings.get("history_limit", 5):],
                 temperature=settings.get("temperature", 0.7),
                 max_tokens=settings.get("max_tokens", 1000),
                 top_p=settings.get("top_p", 1.0)
