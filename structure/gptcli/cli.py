@@ -4,6 +4,9 @@ from gptcli.apis import openai
 import random
 import datetime
 import time
+import json
+import os
+import win11toast
 
 def main():
     config = load_config()
@@ -14,6 +17,8 @@ def main():
     session = PromptSession()
     history = []
 
+    win11toast.toast('ChatGPT CLI',f'ChatGPT CLI Activated at {time.mktime(datetime.datetime.now().timetuple())}',on_click='https://https://www.youtube.com/watch?v=dQw4w9WgXcQ')
+    
     while True:
         try:
             user_input = session.prompt("You: ")
