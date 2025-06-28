@@ -17,7 +17,7 @@ def main():
     session = PromptSession()
     history = []
 
-    win11toast.toast('ChatGPT CLI',f'ChatGPT CLI Activated at {time.mktime(datetime.datetime.now().timetuple())}',on_click='https://https://www.youtube.com/watch?v=dQw4w9WgXcQ')
+    win11toast.toast('ChatGPT CLI',f'ChatGPT CLI Activated at {time.mktime(datetime.datetime.now().timetuple())}',on_click='https://www.youtube.com/watch?v=dQw4w9WgXcQ')
     
     while True:
         try:
